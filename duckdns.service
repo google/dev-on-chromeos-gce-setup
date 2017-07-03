@@ -1,0 +1,20 @@
+[Unit]
+Description=DuckDNS Registration on Startup
+#
+# Limit retries to 1 per 60 seconds
+# 
+StartLimitBurst=1
+StartLimitInterval=60s
+
+[Service]
+Type=simple
+#
+# Run in bash because otherwise nothing in syslog includes duckdns. Include exit code in syslog.
+#
+EnvironmentFile=/etc/duckdns.env
+ExecStart=/bin/bash -c "echo duckdns $( /usr/bin/curl \"https://www.duckdns.org/update?domains=${DUCKDNS_HOSTNAME}&token=${DUCKDNS_TOKEN}&ip=\") $?"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
