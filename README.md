@@ -10,6 +10,10 @@ Because:
 * It forces me to make things as simple as possible, which means lower barriers to entry to anyone
   who wants to help.
 
+## Disclaimer
+
+This is not an official Google product.
+
 ## Key steps to set this up
 
 ### Basic setup
@@ -34,7 +38,7 @@ Then set up the service:
 
 ```sh
 sudo cp duckdns.service /etc/systemd/system
-sudo systemctl enable duckdns.service 
+sudo systemctl enable duckdns.service
 ```
 
 In case you want to check the IP from the machine itself:
