@@ -1,0 +1,12 @@
+#! /bin/sh
+
+### BEGIN INIT INFO
+# Provides:             auto_shutdown
+# Required-Start:       $remote_fs $syslog
+# Required-Stop:        $remote_fs $syslog
+# Default-Start:        2 3 4 5
+# Default-Stop:         
+# Short-Description:    Shuts down the computer after 12 hours
+### END INIT INFO
+
+nohup shutdown -h +720 &

@@ -100,3 +100,13 @@ Let git know who you are:
 git config --global user.email "your-email-addresss-here"
 git config --global user.name "your-name-here"
 ```
+
+## Auto Shutdown
+
+If you want to automatically shutdown the server instance so you're not charged for time you're not using:
+
+```sh
+sudo cp auto_shutdown /etc/init.d
+cd /etc/rc3.d
+sudo ln -s /etc/init.d/auto_shutdown S99auto_shutdown
+```
